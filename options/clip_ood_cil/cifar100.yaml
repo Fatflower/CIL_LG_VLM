@@ -1,0 +1,47 @@
+######### Basic Settings #########
+basic:
+    device: '9'
+    seed: [100] # icarl 官方代码给的种子是 1993
+
+    # Dataset Choises: cifar100_i2t, cifar100_i2t_few_shot
+    dataset: cifar100_i2t
+    shuffle: false
+
+    # Method Choises: icarl, end2end, dr, ucir, bic, lwm, podnet, mas, joint， finetune
+    method: clip_ood_cil_new
+    method_type: multi_steps
+    # eval_metric Choises: acc, mcr
+    eval_metric: acc
+
+    # Backbone Choises: clip_vit_base_patch16_224
+    backbone: clip_vit_b_16_224 
+    ######### Task Settings, unimportant in Joint #########
+    split_dataset: true
+    init_cls: 10
+    increment: 10
+    
+    note: test
+
+######### Method's Hyperparameters #########
+special:
+    incre_type: cil
+    m_desp: true # Whether touse multiple text descriptions
+    lambd: 1 # hyperparameter of image to image similarity
+    is_OOD_test: false # Whether to do OOD testing  # true false
+    T: 1 # Temperature
+    ood_text: true # true false
+
+######### Experiment Settings for Datasets #########
+options:
+    # experiment settings for cifar100
+    cifar100_i2t: 
+        clip_vit_b_16_224:
+            img_size: 224
+
+            epochs: 70 # 70
+            batch_size: 64
+            num_workers: 4            
+
+            opt_type: adamw
+            lrate: 0.005
+            weight_decay: 0.1
