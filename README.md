@@ -95,7 +95,7 @@ If you use this project in your research, please cite:
 
 You are also welcome to reference my other work:
 
-**Title**: Continual Learning of Image Classes With Language Guidance From a Vision-Language Model
+**Title**: Visual Class Incremental Learning with Textual Priors Guidance based on an Adapted Vision-Language Model
 
 **Citation**:
 ```bibtex
